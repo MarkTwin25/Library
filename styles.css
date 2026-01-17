@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+ --header-color: rgb(84, 119, 146);
+ --body-color: rgb(31, 30, 30);
+ --card-color: #9DA1AA;
+}
+
+body{
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--body-color);
+}
+
+/* Header */
+header{
+    background-color: var(--header-color);
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+header .container{
+    background-color: var(--header-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container h2{
+    font-size: 2rem;
+    color: white;
+}
+
+header .container p{
+    background-color: #F36363;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+header .container p:hover{
+    background-color: #c95757;
+}
+
+/* cards */
+
+.cards{
+    /* min-height: 100vh; */
+}
+
+.cards .container{
+    display: flex;
+    gap:25px;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+/* Card */
+
+.card{
+    background-color: var(--card-color);
+    padding: 25px 10px;
+    width: calc((100% /3) - 17px);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.card .info{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-wrap: break-word;
+
+    .title{
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .author{
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .pages{
+        font-weight: bold;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: auto;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: auto;
+    }
+
+    button{
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        width: 70%;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .delete{
+        background-color: rgb(221, 104, 104);
+        color: white;
+    }
+
+    .delete:hover{
+        background-color: rgb(192, 79, 79);
+    }
+
+    .read.yes{
+        background-color: #0CDC2A;
+    }
+
+    .read.yes:hover{
+        background-color: #12b32a;
+    }
+
+}
+
+
+
+/* Modal */
+
+.black-screen{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1000;
+    overflow: hidden;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.modal{
+    background-color: var(--header-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+    animation: soft 0.5s ease-in-out;
+}
+
+@keyframes soft {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    width: 100%;
+    gap:15px;
+
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        gap:15px;
+    }
+
+    button{
+        flex:1;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: #0CDC2A;
+    }
+
+    #cancel:hover{
+        background-color: #F36363;
+    }
+}
+
+form input{
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+form .read{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Media queries */
+
+@media (max-width:768px){
+    .card{
+        width: calc((100% /2) - 17px);
+    }
+}
+
+@media (max-width:500px){
+    .card{
+        width: 100%;
+    }
+
+    .modal{
+        max-width: 300px;
+    }
+}

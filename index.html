@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Library</title>
 </head>
 <body>
-    
+    <!-- Header -->
+     <header>
+        <div class="container">
+            <h2>Library</h2>
+            <p id="add">+ Add book</p>
+        </div>
+     </header>
+
+     <!-- Cards -->
+      <div class="cards" id="cards">
+        <div class="container">
+
+        </div>
+    </div>
+
+    <!-- Add a book -->
+    <div class="black-screen" id="screen-add">
+        <div class="modal">
+            <h2>Add a new Book</h2>
+            <form action="" id="form">
+                <input type="text" placeholder="Title" id="title" name="title" maxlength="30" required>
+                <input type="text" placeholder="Author" id="author" name="author" maxlength="20" required>
+                <input type="number" name="pages" id="pages" placeholder="Pages" required max="10000">
+                <div class="read">
+                    <input type="checkbox" name="read" id="readInput">
+                    <label for="readInput"> Have you read it?</label>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" id="add-book">Add</button>
+                    <button id="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
