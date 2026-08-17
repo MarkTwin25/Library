@@ -20,12 +20,14 @@ const cards = document.getElementById("cards").querySelector(".container");
 let library = JSON.parse(localStorage.getItem("lib"))||[];
 
 // Contructor
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.id = crypto.randomUUID();
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.id = crypto.randomUUID();
+    }
 }
 
 // clear modal
